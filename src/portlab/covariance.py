@@ -43,13 +43,13 @@ from dataclasses import dataclass
 import numpy as np
 
 __all__ = [
-    "sample_covariance",
-    "ledoit_wolf",
+    "ShrinkageResult",
+    "clip_eigenvalues",
     "constant_correlation_shrinkage",
+    "ledoit_wolf",
     "marchenko_pastur_bounds",
     "marchenko_pastur_density",
-    "clip_eigenvalues",
-    "ShrinkageResult",
+    "sample_covariance",
 ]
 
 

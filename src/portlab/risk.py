@@ -46,15 +46,15 @@ from scipy.optimize import minimize
 from scipy.special import ndtri
 
 __all__ = [
-    "RiskMeasure",
     "GarchFit",
-    "gaussian_var",
-    "cornish_fisher_var",
-    "historical_var",
-    "fit_garch",
-    "filtered_historical_var",
-    "evt_var",
+    "RiskMeasure",
     "component_var",
+    "cornish_fisher_var",
+    "evt_var",
+    "filtered_historical_var",
+    "fit_garch",
+    "gaussian_var",
+    "historical_var",
 ]
 
 

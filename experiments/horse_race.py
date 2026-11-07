@@ -235,7 +235,13 @@ def main():
     sweep = sweep_q(ratios, n_assets, max(n_draws // 2, 2))
 
     payload = dict(summary=summary, sweep=sweep, n_assets=n_assets, n_draws=n_draws)
-    (RESULTS / "horse_race.json").write_text(json.dumps(payload, indent=2) + "\n")
+    # A --quick run is a smoke test, not a result.  Writing it to the same
+    # path as the full run silently replaces the numbers the README quotes
+    # with ones from a hundredth of the work -- which is exactly what happened
+    # while verifying the CI smoke tests, leaving the committed JSON
+    # contradicting the committed figures.
+    suffix = "_quick" if args.quick else ""
+    (RESULTS / f"horse_race{suffix}.json").write_text(json.dumps(payload, indent=2) + "\n")
     if not args.quick:
         plot(summary, sweep, RESULTS / "horse_race.png")
 

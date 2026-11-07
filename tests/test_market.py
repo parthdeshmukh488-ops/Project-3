@@ -66,7 +66,7 @@ def test_covariance_is_positive_definite():
 
 
 def test_regime_market_changes_volatility_where_it_says_it_does():
-    returns, volatility = regime_market(
+    returns, _ = regime_market(
         n_obs=4000, switch_at=2000, quiet_vol=0.12, stressed_vol=0.38, seed=7
     )
     quiet = returns[:1800].std() * np.sqrt(252)

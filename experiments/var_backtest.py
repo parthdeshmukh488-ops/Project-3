@@ -228,7 +228,13 @@ def main():
 
     payload = dict(confidence=confidence, n_scored=len(realised),
                    switch_day=switch_day, rows=rows)
-    (RESULTS / "var_backtest.json").write_text(json.dumps(payload, indent=2) + "\n")
+    # A --quick run is a smoke test, not a result.  Writing it to the same
+    # path as the full run silently replaces the numbers the README quotes
+    # with ones from a hundredth of the work -- which is exactly what happened
+    # while verifying the CI smoke tests, leaving the committed JSON
+    # contradicting the committed figures.
+    suffix = "_quick" if args.quick else ""
+    (RESULTS / f"var_backtest{suffix}.json").write_text(json.dumps(payload, indent=2) + "\n")
     if not args.quick:
         plot(realised, forecasts, rows, switch_day, RESULTS / "var_backtest.png")
 

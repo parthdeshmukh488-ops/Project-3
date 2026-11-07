@@ -49,6 +49,7 @@ from .risk import evt_var, filtered_historical_var, fit_garch, gaussian_var, his
 __version__ = "0.1.0"
 
 __all__ = [
+    "__version__",
     "black_litterman",
     "christoffersen_conditional_coverage",
     "christoffersen_independence",
@@ -69,5 +70,4 @@ __all__ = [
     "risk_contributions",
     "risk_parity",
     "sample_covariance",
-    "__version__",
 ]

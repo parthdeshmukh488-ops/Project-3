@@ -38,14 +38,14 @@ import numpy as np
 from scipy.cluster.hierarchy import linkage, to_tree
 
 __all__ = [
-    "simplex_projection",
-    "min_variance",
-    "risk_parity",
-    "risk_contributions",
+    "black_litterman",
+    "equal_weight",
     "hierarchical_risk_parity",
     "max_diversification",
-    "equal_weight",
-    "black_litterman",
+    "min_variance",
+    "risk_contributions",
+    "risk_parity",
+    "simplex_projection",
 ]
 
 

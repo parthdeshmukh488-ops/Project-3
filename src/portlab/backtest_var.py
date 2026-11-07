@@ -38,9 +38,9 @@ from scipy.stats import chi2
 __all__ = [
     "BacktestResult",
     "breaches",
-    "kupiec_pof",
-    "christoffersen_independence",
     "christoffersen_conditional_coverage",
+    "christoffersen_independence",
+    "kupiec_pof",
     "traffic_light",
 ]
 
