@@ -23,7 +23,7 @@ itself an estimate, so a horse race partly measures which estimator happens to
 resemble the test period's sample covariance.
 
 ```bash
-cd portfolio && pip install -e ".[dev,plot]" && pytest tests/ -q
+pip install -e ".[dev,plot]" && pytest tests/ -q
 ```
 
 66 tests, 97% coverage.
